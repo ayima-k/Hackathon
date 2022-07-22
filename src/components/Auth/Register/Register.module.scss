@@ -8,17 +8,49 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    background-color: whitesmoke;
+    padding: 2rem;
+    width: 400px;
+    height: 450px;
+    border-radius: 8px;
     h1{
       margin: 0;
+      color: #333;
+      font-weight: 150;
+      font-size: 40px;
+    }
+    fieldset{
+      border: 1px solid #ccc;
     }
     div{
       width: 100%;
     }
+    .container{
+      display: flex;
+      width: 100%;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      svg{
+        font-size: 30px;
+      }
+      p{
+        font-size: 20px;
+        margin-left: 10px;
+      }
+    }
     .btn{
       display: flex;
       justify-content: space-between;
-      button{
-        width: 100%;
+      button:nth-child(1){
+        background-color: #3A7B99;
+        width: 200px;
+        height: 50px;
+      }
+      button:nth-child(2){
+        border: 0.5px solid #3A7B99;
+        color: #3A7B99;
+        width: 110px;
       }
     }
   }

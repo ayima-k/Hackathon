@@ -1,6 +1,7 @@
 import React from 'react'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
+import { FcGoogle } from 'react-icons/fc'
 import cls from './Register.module.scss'
 import { useNavigate } from 'react-router-dom'
 
@@ -10,7 +11,7 @@ const Register = () => {
   return (
     <div className={cls.register}>
       <form>
-        <h1>Зарегистрироваться</h1>
+        <h1>Регистрация</h1>
         <TextField
           type='text'
           placeholder={'Имя пользователя'}
@@ -33,14 +34,19 @@ const Register = () => {
           <Button
             variant='contained'
           >
-            Отправить
+            Зарегистрироваться
           </Button>
           <Button
             variant='outlined'
             onClick={() => navigate('/auth/login')}
           >
-            Вход
+            Войти
           </Button>
+        </div>
+
+        <div className={cls.container}>
+          <FcGoogle/>
+          <p>Войти с помощью Google</p>
         </div>
       </form>
     </div>
