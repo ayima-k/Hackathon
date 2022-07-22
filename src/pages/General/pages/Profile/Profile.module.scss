@@ -1,0 +1,13 @@
+.container{
+  width: 90%;
+  margin: 0 auto;
+  .userPhoto{
+    text-align: center;
+    margin-top: 30px;
+    img{
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+  }
+}
