@@ -1,0 +1,135 @@
+.container {
+  @media (min-width:320px) {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  @media (min-width:768px) {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  @media (min-width:1024px) {
+    padding: 2rem 100px;
+    justify-content: space-between;
+  }
+
+  .card {
+    @media (min-width:320px) {
+      width: 100%;
+      height: 204px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid white;
+      border-radius: 12px;
+      padding: 0.55rem 1rem;
+      padding-bottom: 0.75rem;
+      background-color: #fafcfe;
+      border: 1px solid #e0e0e0;
+    }
+
+    @media (min-width:768px) {
+      width: 300px;
+    }
+
+    .top {
+      @media (min-width:320px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // border: 1px solid black;
+      }
+
+      .direction {
+        @media (min-width:320px) {
+          h2 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #214793;
+          }
+        }
+      }
+
+      .level_block {
+        width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h4 {
+          color: #213f7a;
+        }
+
+        .junior {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: #4cc56b;
+        }
+
+        .middle {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          // background-color: #FC8571;
+          background-color: #f7a20f;
+
+        }
+
+        .senior {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          // background-color: #7c1bea ;
+          background-color: #C71239 ;
+
+        }
+        
+
+      }
+    }
+
+    .footer {
+      @media (min-width:320px) {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 8px;
+      }
+
+      .footer_top {
+        h3 {
+          font-size: 16px;
+          line-height: 1.5rem;
+          color: #213f7a;
+        }
+
+        h5 {
+          font-size: 14px;
+          font-weight: 400;
+          color: #555;
+        }
+      }
+
+      .footer_bottom {
+
+        // border: 1px solid blue;
+        p {
+          font-size: 14px;
+          color: #444;
+          line-height: 1.4rem;
+        }
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

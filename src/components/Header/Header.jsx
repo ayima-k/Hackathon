@@ -17,7 +17,7 @@ const Header = () => {
           {
             list.map(({ id, title, route }) => (
               <ul className={cls.list} key={id}>
-                <li key={id}>
+                <li>
                   <Link to={route}>{title}</Link>
                 </li>
               </ul>
