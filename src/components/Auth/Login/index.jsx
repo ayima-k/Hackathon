@@ -2,6 +2,7 @@ import React from 'react'
 import { FcGoogle } from 'react-icons/fc'
 import { Button, TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import logo from '../../../assets/img/logo.png'
 import cls from './Login.module.scss'
 
 const Login = () => {
@@ -10,7 +11,9 @@ const Login = () => {
   return (
     <div className={cls.login}>
       <form>
-        <img src="https://static.tildacdn.com/tild3639-3135-4765-a366-303730373766/ololo-creativehubs-l.png" alt="" />
+        <div className={cls.logo}>
+          <img src={logo} alt="" />
+        </div>
         <h1>Вход</h1>
         <TextField
           type='email'

@@ -3,6 +3,7 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import { FcGoogle } from 'react-icons/fc'
 import cls from './Register.module.scss'
+import logo from '../../../assets/img/logo.png'
 import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
@@ -11,6 +12,9 @@ const Register = () => {
   return (
     <div className={cls.register}>
       <form>
+        <div className={cls.logo}>
+          <img src={logo} alt="" />
+        </div>
         <h1>Регистрация</h1>
         <TextField
           type='text'
