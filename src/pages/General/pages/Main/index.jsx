@@ -1,10 +1,11 @@
 import React from 'react';
-import Header from '../../../../components/Header/Header';
+import Card from '../../../../components/Card/Card';
+import CardSkelet from '../../../../components/Skeleton/CardSkelet/CardSkelet';
 
 function Main() {
   return (
     <React.Fragment>
-      <Header />
+      <Card />
     </React.Fragment>
   );
 }
