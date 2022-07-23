@@ -1,6 +1,8 @@
-import { Button, TextField } from '@mui/material'
 import React from 'react'
+import { FcGoogle } from 'react-icons/fc'
+import { Button, TextField } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import logo from '../../../assets/img/logo.png'
 import cls from './Login.module.scss'
 
 const Login = () => {
@@ -9,7 +11,10 @@ const Login = () => {
   return (
     <div className={cls.login}>
       <form>
-        <h1>Войти</h1>
+        <div className={cls.logo}>
+          <img src={logo} alt="" />
+        </div>
+        <h1>Вход</h1>
         <TextField
           type='email'
           placeholder={'Электронная почта'}
@@ -26,7 +31,7 @@ const Login = () => {
           <Button 
             variant='contained'
           >
-            Отправить
+            Войти
           </Button>
           <Button
             variant='outlined'
@@ -38,13 +43,8 @@ const Login = () => {
 
 
         <div className={cls.container}>
-          <img
-            width={'30px'}
-            style={{cursor: 'pointer'}}
-            src="https://cdn-icons-png.flaticon.com/512/2875/2875404.png" 
-            alt=""
-          />
-          <p>Войти с помощью Google?</p>
+          <FcGoogle/>
+          <p>Войти с помощью Google</p>
         </div>
       </form>
     </div>
