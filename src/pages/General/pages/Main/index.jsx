@@ -4,7 +4,7 @@ import Header from '../../../../components/Header/Header';
 function Main() {
   return (
     <React.Fragment>
-      <Header />
+    
     </React.Fragment>
   );
 }
