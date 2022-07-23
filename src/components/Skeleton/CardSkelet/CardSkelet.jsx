@@ -4,8 +4,7 @@ import Stack from '@mui/material/Stack';
 import { Box } from '@mui/material';
 import { CardList } from '../../Card/List/index'
 
-export default function Variants() {
-  console.log(CardList);
+export default function Skeletons() {
   return (
     <React.Fragment>
       {

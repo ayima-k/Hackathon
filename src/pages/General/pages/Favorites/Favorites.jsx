@@ -1,9 +1,10 @@
 import React from 'react';
+import ResumeForm from '../../../../components/ResumeForm/ResumeForm';
 
-function Favorites(props) {
+const Favorites = () => {
   return (
     <div>
-      Favorites
+      <ResumeForm />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { CardList } from './List'
 import logo from '../../assets/img/logo.png'
 import { Link } from 'react-router-dom'
 import { Skeleton } from '@mui/material'
-import Variants from '../Skeleton/CardSkelet/CardSkelet'
+import Skeletons from '../Skeleton/CardSkelet/CardSkelet'
 
 
 const Card = () => {
@@ -47,7 +47,7 @@ const Card = () => {
                   </div>
                 </Link>
               )
-            }) : <Variants />
+            }) : <Skeletons />
         }
 
       </div>
