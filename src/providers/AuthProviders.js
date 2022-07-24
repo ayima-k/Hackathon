@@ -15,7 +15,6 @@ export const AuthProviders = ({children}) => {
         setIsAuth(user)
       }else{
         setIsAuth(null)
-        
       }
     })
     return () => Listen()

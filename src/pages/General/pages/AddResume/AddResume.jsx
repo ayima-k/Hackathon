@@ -4,12 +4,12 @@ import { MdPhotoCamera } from 'react-icons/md'
 import { FiDownload } from 'react-icons/fi'
 import cls from './AddResume.module.scss'
 import {useForm} from "react-hook-form";
-import {resumeCreate} from "../../../../config";
-import {useAuth} from "../../../../hooks/useAuth";
+import {getResume, resumeCreate} from "../../../../config";
 import Watch from "../../../../components/Watch/Watch";
+import useIsLogin from "../../../../hooks/useIsLogin";
 
 const AddResume = () => {
-  const {id} = useAuth()
+  const {isAuth} = useIsLogin()
   const {
     register,
     reset,
@@ -17,10 +17,14 @@ const AddResume = () => {
     
   } = useForm()
   
-  function postResume (data){
-    
-    resumeCreate(data, id).then(r => console.log(r))
+  function getResumeData(){
+    getResume(isAuth?.uid).then()
   }
+  
+  function postResume (data){
+    resumeCreate(data, isAuth?.uid).then(r => r && getResumeData)
+  }
+  
   
   return (
     <React.Fragment>
@@ -144,9 +148,10 @@ const AddResume = () => {
                   <label>Ваш стэк</label>
                 </div>
                 <select className={cls.select} {...register('resumeStack')}>
-                  <option value="Junior">JavaScript</option>
-                  <option value="Middle">Python</option>
-                  <option value="Senior">Java</option>
+                  <option selected disabled>Выберитe ваш стэк</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Python">Python</option>
+                  <option value="Java">Java</option>
                 </select>
               </div>
             </div>

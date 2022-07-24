@@ -6,28 +6,28 @@ import notFound from '../../assets/img/notFound.png'
 
 
 
-const Card = ({ filterCard }) => {
-
+const Card = ({ filterCard,  }) => {
+  console.log(filterCard)
   !filterCard && <Skeleton />
   return (
     <React.Fragment>
       <div className={cls.container}>
         {
           filterCard?.length !== 0
-            ? filterCard?.map(({ id, name, direction, skills, number, level }) => {
+            ? filterCard?.map(({ id, userName, resume:{resumeDirection,resumeLastName, resumeName, resumeLevel, resumeStack, resumePhone}}) => {
               return (
                 <Link to={`users/${id}`} key={id}>
                   <div className={cls.card}>
                     <div className={cls.top}>
                       <div className={cls.direction}>
-                        <h2>{direction}</h2>
+                        <h2>{resumeDirection}</h2>
                       </div>
                       <div className={cls.level_block}>
-                        <h4>{level}</h4>
+                        <h4>{resumeLevel}</h4>
                         <span className={
-                          level === 'middle'
+                          resumeLevel === 'Middle'
                             ? cls.middle
-                            : level === 'senior'
+                            : resumeLevel === 'Senior'
                               ? cls.senior
                               : cls.junior
                         }>
@@ -36,12 +36,12 @@ const Card = ({ filterCard }) => {
                     </div>
                     <div className={cls.footer}>
                       <div className={cls.footer_top}>
-                        <h3>{name}</h3>
-                        <h5>{direction}</h5>
+                        <h3>{resumeName} {resumeLastName}</h3>
+                        <h5>{resumeDirection}</h5>
                       </div>
                       <div className={cls.footer_bottom}>
-                        <p>{skills}</p>
-                        <p>{number}</p>
+                        <p>{resumeStack}</p>
+                        <p>{resumePhone}</p>
                         {/* <p className={cls.arrow}>
                           {number}
                           <span><BsArrowRight /></span>
