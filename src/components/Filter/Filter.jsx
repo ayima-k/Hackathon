@@ -16,6 +16,7 @@ const Filter = () => {
       || item.skills?.toLowerCase().includes(state.toLowerCase())
   })
 
+
   const handleValue = (value) => {
     setValue(value)
   }

@@ -1,7 +1,17 @@
 import React from 'react'
+import { getUsers } from '../../../../config'
 import cls from './More.module.scss'
 
 const More = () => {
+
+  // const [base, setBase] = React.useState(null)
+  // React.useEffect(() => {
+  //   getUsers()
+  //   .then(r => console.log(r))
+  // })
+
+
+
   return (
     <React.Fragment>
       <div className={cls.container}>
@@ -90,7 +100,7 @@ const More = () => {
               <label>Дата рождения</label>
             </div>
             <div className={cls.date}>
-              <input className={cls.input2} type="date" disabled/>
+              <input className={cls.input2} type="date" disabled />
             </div>
           </div>
           <div>
@@ -113,7 +123,7 @@ const More = () => {
             <div>
               <label>Стэк</label>
             </div>
-            <input className={cls.input2} type="text" disabled/>
+            <input className={cls.input2} type="text" disabled />
           </div>
         </div>
       </div>

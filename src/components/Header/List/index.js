@@ -19,4 +19,14 @@ export const list = [
     title: 'Профиль',
     route: '/profile',
   },
+  {
+    id: 5,
+    title: 'Войти',
+    route: '/auth/login',
+  },
+  {
+    id: 6,
+    title: 'Регистрация',
+    route: '/auth/register',
+  },
 ]

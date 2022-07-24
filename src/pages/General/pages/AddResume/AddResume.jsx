@@ -3,24 +3,27 @@ import React from 'react'
 import { MdPhotoCamera } from 'react-icons/md'
 import { FiDownload } from 'react-icons/fi'
 import cls from './AddResume.module.scss'
-import {useForm} from "react-hook-form";
-import {resumeCreate} from "../../../../config";
-import {useAuth} from "../../../../hooks/useAuth";
+import { useForm } from "react-hook-form";
+import { resumeCreate } from "../../../../config";
+import { useAuth } from "../../../../hooks/useAuth";
+import Watch from '../../../../components/Watch/Watch'
+// import watch from "../../../../components/Watch/Watch"
+
 
 const AddResume = () => {
-  const {id} = useAuth()
+  const { id } = useAuth()
   const {
     register,
     reset,
     handleSubmit,
-    
+
   } = useForm()
-  
-  function postResume (data){
-    
+
+  function postResume(data) {
+
     resumeCreate(data, id).then(r => console.log(r))
   }
-  
+
   return (
     <React.Fragment>
       <div className={cls.container}>
@@ -43,7 +46,7 @@ const AddResume = () => {
                     <label>Имя</label>
                   </div>
                   <div>
-                    <input type="text" {...register('resumeName')}/>
+                    <input type="text" {...register('resumeName')} />
                   </div>
                 </div>
                 <div>
@@ -60,7 +63,7 @@ const AddResume = () => {
                   <label>Адрес эл. почты</label>
                 </div>
                 <div>
-                  <input type="email"  {...register('resumeEmail')}/>
+                  <input type="email"  {...register('resumeEmail')} />
                 </div>
               </div>
             </div>
@@ -79,7 +82,7 @@ const AddResume = () => {
                 <label>Номер телефона</label>
               </div>
               <div>
-                <input type="text" {...register('resumePhone')}/>
+                <input type="text" {...register('resumePhone')} />
               </div>
             </div>
             <div>
@@ -87,7 +90,7 @@ const AddResume = () => {
                 <label>Адрес</label>
               </div>
               <div>
-                <input type="text" {...register('resumeAddress')}/>
+                <input type="text" {...register('resumeAddress')} />
               </div>
             </div>
             <div className={cls.dflex}>
@@ -96,7 +99,7 @@ const AddResume = () => {
                   <label>Страна</label>
                 </div>
                 <div>
-                  <input className={cls.input2} type="text" {...register('resumeCountry')}/>
+                  <input className={cls.input2} type="text" {...register('resumeCountry')} />
                 </div>
               </div>
               <div>
@@ -104,7 +107,7 @@ const AddResume = () => {
                   <label>Город</label>
                 </div>
                 <div>
-                  <input className={cls.input2} type="text" {...register('resumeCity')}/>
+                  <input className={cls.input2} type="text" {...register('resumeCity')} />
                 </div>
               </div>
             </div>
@@ -113,10 +116,23 @@ const AddResume = () => {
                 <label>Дата рождения</label>
               </div>
               <div className={cls.date}>
-                <input type="date" {...register('resumeDate')}/>
+                <input type="date" {...register('resumeDate')} />
               </div>
             </div>
             <div className={cls.dflex}>
+              <div>
+                <div>
+                  <label>Ваше направление</label>
+                </div>
+                <div>
+                  <select className={cls.select} {...register('resumeDirection')}>
+                    <option selected disabled>Выберитe ваше направление</option>
+                    <option value="FrontEnd">FrontEnd</option>
+                    <option value="BackEnd">BackEnd</option>
+                    <option value="Android">Android</option>
+                  </select>
+                </div>
+              </div>
               <div>
                 <div>
                   <label>Ваш уровень</label>
@@ -135,7 +151,7 @@ const AddResume = () => {
                   <label>Опыт работы</label>
                 </div>
                 <div>
-                  <input className={cls.input2} type="number" placeholder='0-10' {...register('resumeExperience')}/>
+                  <input className={cls.input2} type="number" placeholder='0-10' {...register('resumeExperience')} />
                 </div>
               </div>
               <div>
@@ -157,7 +173,7 @@ const AddResume = () => {
             </Button>
           </div>
         </form>
-        <Watch/>
+        <Watch />
       </div>
     </React.Fragment>
   )

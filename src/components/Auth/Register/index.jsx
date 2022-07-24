@@ -25,10 +25,6 @@ const Register = () => {
     mode: "onChange"
   })
   
-  // const handleNewUser = (data, userId) => {
-  //
-  // }
-  
   const handleFormSubmit = async (data) => {
     console.log(data)
     try {

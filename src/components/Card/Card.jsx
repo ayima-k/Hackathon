@@ -3,12 +3,27 @@ import cls from './Card.module.scss'
 import { Link } from 'react-router-dom'
 import { Skeleton } from '@mui/material'
 import notFound from '../../assets/img/notFound.png'
+import { getResume, getUsers } from '../../config'
+import { useAuth } from '../../hooks/useAuth'
 
 
 
 const Card = ({ filterCard }) => {
 
+  const { id } = useAuth()
+
+  console.log(id);
+
+  React.useEffect(() => {
+    
+    getResume(id).then(r => console.log(r))
+    
+  }, [])
+
+
   !filterCard && <Skeleton />
+
+
   return (
     <React.Fragment>
       <div className={cls.container}>
