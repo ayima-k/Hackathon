@@ -1,11 +1,12 @@
 import React from 'react';
 import Card from '../../../../components/Card/Card';
-import CardSkelet from '../../../../components/Skeleton/CardSkelet/CardSkelet';
+import Filter from '../../../../components/Filter/Filter';
+
 
 function Main() {
   return (
     <React.Fragment>
-      <Card />
+      <Filter />
     </React.Fragment>
   );
 }

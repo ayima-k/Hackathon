@@ -16,12 +16,6 @@ const Register = () => {
   const dispatch = useDispatch()
   const [wrongData, setWrongData] = React.useState(false)
   
-  // const handleRegister = (email, password) => {
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //     .then(console.log)
-  //     .catch(console.error)
-  // }
-  
   const {
     register,
     reset,
@@ -31,23 +25,9 @@ const Register = () => {
     mode: "onChange"
   })
   
+  // const handleNewUser = (data, userId) => {
   //
-  // function onSubmit(data){
-  //   console.log(data.userName, data.userPassword)
-  //   handleRegister(data.userName, data.userPassword)
-  //   reset()
   // }
-  
-  const handleNewUser = (data, userId) => {
-    createNewUser(
-      {
-        ...data,
-        totalPrice: 0,
-        phoneNumber: '',
-      },
-      userId
-    ).then(() => navigate('/'))
-  }
   
   const handleFormSubmit = async (data) => {
     console.log(data)
@@ -55,7 +35,7 @@ const Register = () => {
       const res = await createUserWithEmailAndPassword(
         auth,
         data.userEmail,
-        data.userPassword
+        data.userPassword,
       ).then(({user}) => {
         console.log(user)
         dispatch(setUser({
@@ -63,15 +43,11 @@ const Register = () => {
           id: user.uid,
           token: user.accessToken,
         }))
+        user && createNewUser({...data, resume:''}, user.uid).then((r) => r && navigate('/'))
       })
-      await updateProfile(res.user, {
-        displayName: data.userName || 'Пользователь',
-        photoURL:
-          'https://api-private.atlassian.com/users/2e5afb4451de305435994b4dbca95d38/avatar',
-      })
-      res && handleNewUser(data, res.user.uid)
+      
     } catch (error) {
-      setWrongData(true)
+      console.log(error)
     } finally {
       reset()
     }
@@ -79,7 +55,7 @@ const Register = () => {
   
   return (
     <div className={cls.register}>
-      <form onSubmit={handleSubmit(data => handleFormSubmit(data))}>
+      <form onSubmit={handleSubmit(handleFormSubmit)}>
         <h1>Регистрация</h1>
         <TextField
           type='text'

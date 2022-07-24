@@ -1,3 +1,8 @@
 import instance from './api'
 
-export const createNewUser = (data) => instance.post('/users/.json', data)
+
+export const createNewUser = (data, userId) => instance.put(`/users/${userId}.json`, data)
+
+export const getUsers = () => instance.get('auth/users/.json' )
+
+export const resumeCreate = (data, userId) => instance.patch(`users/${userId}/resume/.json`, data)

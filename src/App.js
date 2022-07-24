@@ -18,6 +18,9 @@ function App() {
         <Route path={'/auth/register'} element={<Register/>}/>
         <Route path={'/responses'} element={<MainPages.pages.Responses />} />
         <Route path={'/users/:id'} element={<MainPages.pages.More/>} />
+        <Route path={'/developers'} element={<MainPages.pages.Responses />} />
+        <Route path={'/users/:id'} element={<MainPages.pages.More />} />
+        <Route path={'/resume'} element={<MainPages.pages.AddResume />} />
       </Routes>
     </div>
   );

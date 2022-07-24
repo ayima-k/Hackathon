@@ -3,7 +3,7 @@ import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import { Box } from '@mui/material';
 
-export default function Variants() {
+export default function Skeletons() {
   return (
     <React.Fragment>
       {
