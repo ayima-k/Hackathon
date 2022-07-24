@@ -1,13 +1,9 @@
 import React from 'react'
 import cls from './Card.module.scss'
-import { CardList } from './List'
-import logo from '../../assets/img/logo.png'
 import { Link } from 'react-router-dom'
 import { Skeleton } from '@mui/material'
-import Skeletons from '../Skeleton/CardSkelet/CardSkelet'
 import notFound from '../../assets/img/notFound.png'
 
-import { BsArrowRight } from 'react-icons/bs'
 
 
 const Card = ({ filterCard }) => {
