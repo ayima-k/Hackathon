@@ -5,16 +5,20 @@ import logo from '../../assets/img/logo.png'
 import { Link } from 'react-router-dom'
 import { Skeleton } from '@mui/material'
 import Skeletons from '../Skeleton/CardSkelet/CardSkelet'
+import notFound from '../../assets/img/notFound.png'
+
+import { BsArrowRight } from 'react-icons/bs'
 
 
-const Card = () => {
+const Card = ({ filterCard }) => {
+
+  !filterCard && <Skeleton />
   return (
     <React.Fragment>
       <div className={cls.container}>
         {
-          CardList.length !== 0
-            ? CardList.map(({ id, name, direction, skills, number, level }) => {
-              console.log(level);
+          filterCard?.length !== 0
+            ? filterCard?.map(({ id, name, direction, skills, number, level }) => {
               return (
                 <Link to={`users/${id}`} key={id}>
                   <div className={cls.card}>
@@ -42,14 +46,21 @@ const Card = () => {
                       <div className={cls.footer_bottom}>
                         <p>{skills}</p>
                         <p>{number}</p>
+                        {/* <p className={cls.arrow}>
+                          {number}
+                          <span><BsArrowRight /></span>
+                        </p> */}
                       </div>
                     </div>
                   </div>
                 </Link>
               )
-            }) : <Skeletons />
+            })
+            : <div className={cls.notFound}>
+              <h2>По вашему запросу ничего не найдено</h2>
+              <img src={notFound} alt="NotFound" />
+            </div>
         }
-
       </div>
     </React.Fragment>
   )

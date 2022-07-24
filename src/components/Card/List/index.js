@@ -11,7 +11,7 @@ export const CardList = [
     id: 2,
     name: 'Сайдуллох',
     direction: 'Back-End',
-    skills: 'pytnon,django,flask',
+    skills: 'python,django,flask',
     number: '0777420210',
     level: 'middle',
   },
