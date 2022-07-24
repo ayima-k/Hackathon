@@ -6,3 +6,5 @@ export const createNewUser = (data, userId) => instance.put(`/users/${userId}.js
 export const getUsers = () => instance.get('auth/users/.json' )
 
 export const resumeCreate = (data, userId) => instance.patch(`users/${userId}/resume/.json`, data)
+
+export const getResume = (userId) => instance.get(`users/${userId}/resume/.json`)

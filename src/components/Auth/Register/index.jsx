@@ -25,10 +25,6 @@ const Register = () => {
     mode: "onChange"
   })
   
-  // const handleNewUser = (data, userId) => {
-  //
-  // }
-  
   const handleFormSubmit = async (data) => {
     console.log(data)
     try {
@@ -43,7 +39,7 @@ const Register = () => {
           id: user.uid,
           token: user.accessToken,
         }))
-        user && createNewUser({...data, resume:''}, user.uid).then((r) => r && navigate('/'))
+        user && createNewUser({...data, resume:null,}, user.uid).then((r) => r && navigate('/'))
       })
       
     } catch (error) {

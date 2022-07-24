@@ -11,10 +11,10 @@
   .resume {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     padding: 1rem 3rem;
     width: 52%;
-    overflow: scroll;
+    overflow-y: scroll;
+    height: 100vh;
     @media (max-width: 1024px) {
       padding: 1rem 2rem;
     }
@@ -215,7 +215,6 @@
   .watch {
     width: 40%;
     padding: 1rem 2rem;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -242,6 +241,19 @@
         padding: 2rem;
         background-color: #4314B3;
         color: aliceblue;
+      }
+      .block_main{
+        margin-top: 1rem;
+        .list{
+          display: flex;
+          gap: 50px;
+          margin-bottom: 20px;
+          p{
+            span{
+              margin-left: 15px;
+            }
+          }
+        }
       }
     }
   }

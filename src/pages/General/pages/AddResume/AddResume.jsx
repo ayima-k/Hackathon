@@ -6,6 +6,7 @@ import cls from './AddResume.module.scss'
 import {useForm} from "react-hook-form";
 import {resumeCreate} from "../../../../config";
 import {useAuth} from "../../../../hooks/useAuth";
+import Watch from "../../../../components/Watch/Watch";
 
 const AddResume = () => {
   const {id} = useAuth()
