@@ -177,7 +177,7 @@
       }
 
       div {
-        input {
+        input, textarea {
           outline: none;
           font-size: 1rem;
           line-height: 1.5rem;
@@ -192,7 +192,7 @@
           background-color: #F4F4F5;
           border: 0.5px solid #FFFFFF;
           border-radius: 5px;
-
+          
           &:focus {
             border: 0.5px solid #5d25e7;
             background-color: #f9f6fe;
@@ -201,6 +201,13 @@
           @media (max-width: 376px) {
             width: 98%;
           }
+        }
+        textarea{
+          width: 100%;
+          max-width: 675px;
+          min-width: 675px;
+          max-height: 200px;
+          min-height: 44px;
         }
 
         .date {

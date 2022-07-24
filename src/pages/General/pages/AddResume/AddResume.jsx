@@ -55,7 +55,7 @@ const AddResume = () => {
                 <label>Заголовок</label>
               </div>
               <div>
-                <input type="text" />
+                <textarea type="text" />
               </div>
             </div>
             <div>

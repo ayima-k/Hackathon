@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 3rem;
+
+  @media (min-width:1024px) {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .header {
+    display: flex;
+    width: 100%;
+    @media (max-width: 426px) {
+      flex-wrap: wrap;
+    }
+
+    .profileImg {
+      cursor: pointer;
+      padding-right: 1rem;
+
+      .imgBlock {
+        background-color: #F4F4F5;
+        padding: 3rem 3.5rem;
+        border-radius: 5px;
+        border: 0.5px solid #FFFFFF;
+
+        svg {
+          width: 1.25rem;
+          --tw-text-opacity: 1;
+          color: rgb(162 162 168/var(--tw-text-opacity))
+        }
+
+        @media (max-width: 426px) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .headerInputs {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: -7px;
+    }
+  }
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .select {
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #F4F4F5;
+  }
+
+  div {
+    padding: 3px 0;
+
+    label {
+      color: #52525A;
+      font-weight: 500;
+      white-space: nowrap;
+      font-size: .875rem;
+    }
+
+    input, textarea {
+      outline: none;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      transition-duration: .15s;
+      transition-property: color, background-color, border-color, -webkit-text-decoration-color, -webkit-text-decoration-color, text-decoration-color, fill, stroke;
+      transition-timing-function:
+        cubic-bezier(.4, 0, .2, 1);
+        color: rgb(46 46 51/var(--tw-text-opacity));
+      --tw-text-opacity: 1;
+      padding: 0.5rem;
+      width: 400px;
+      background-color: #F4F4F5;
+      border: 0.5px solid #FFFFFF;
+      border-radius: 5px;
+    }
+    .input2{
+      width: 440px;
+    }
+    textarea{
+      width: 400px;
+      max-width: 400px;
+      min-width: 400px;
+      height: 43px;
+      max-height: 200px;
+      min-height: 43px;
+    }
+  }
+}
