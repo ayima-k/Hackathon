@@ -1,18 +1,18 @@
 import React from 'react';
 import cls from "../../pages/General/pages/AddResume/AddResume.module.scss";
-import {getResume} from "../../config";
-
+import { getResume } from "../../config";
 import useIsLogin from "../../hooks/useIsLogin";
 
 function Watch() {
+  const { isAuth } = useIsLogin()
+  console.log(isAuth?.uid)
   const [data, setData] = React.useState(null)
-  const {isAuth} = useIsLogin()
-  
+
   React.useEffect(() => {
-    getResume(isAuth?.uid).then()
-  }, [isAuth?.uid, setData])
-  
-  if(!data) return <p>......</p>
+    getResume(isAuth?.uid).then(r => setData(r.data))
+  }, [isAuth?.uid])
+
+  if (!data) return <p>......</p>
   return (
     <>
       <div className={cls.watch}>
@@ -43,19 +43,7 @@ function Watch() {
             <div className={cls.list}>
               <b>Ваш уровень</b>
               <p>
-                {data.resumeLevel}
-              </p>
-            </div>
-            <div className={cls.list}>
-              <b>Опыт работы</b>
-              <p>
-                {data.resumeExperience} года
-              </p>
-            </div>
-            <div className={cls.list}>
-              <b>Ваш стэк</b>
-              <p>
-                {data.resumeStack}
+                {data.resumePhone}
               </p>
             </div>
           </div>

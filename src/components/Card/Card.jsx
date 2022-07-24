@@ -3,12 +3,17 @@ import cls from './Card.module.scss'
 import { Link } from 'react-router-dom'
 import { Skeleton } from '@mui/material'
 import notFound from '../../assets/img/notFound.png'
+import { getResume, getUsers } from '../../config'
+import { useAuth } from '../../hooks/useAuth'
+import useIsLogin from '../../hooks/useIsLogin'
 
 
 
 const Card = ({ filterCard,  }) => {
   console.log(filterCard)
   !filterCard && <Skeleton />
+
+
   return (
     <React.Fragment>
       <div className={cls.container}>
