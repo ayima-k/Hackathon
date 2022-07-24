@@ -2,16 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 500px;
   form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     background-color: aliceblue;
-    padding: 2rem;
+    padding: 1rem;
     width: 400px;
-    height: 550px;
     border-radius: 12px !important;
     @media (max-width: 320px) {
       padding: 2rem 1rem;
@@ -26,7 +25,7 @@
       }
     }
     h1{
-      margin: 0;
+      margin-bottom: 1rem;
       color: #333;
       font-weight: 600;
       font-size: 32px;
@@ -37,23 +36,24 @@
     div{
       width: 100%;
     }
-    .container{
-      display: flex;
-      width: 100%;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      svg{
-        font-size: 30px;
-      }
-      p{
-        font-size: 20px;
-        margin-left: 10px;
-      }
+    .error{
+      color: red;
+    }
+    .shake{
+      animation-name: horizontal-shaking;
+      animation-duration: .3s;
+    }
+    @keyframes horizontal-shaking {
+      0% { transform: translateX(0) }
+      25% { transform: translateX(5px) }
+      50% { transform: translateX(-6px) }
+      75% { transform: translateX(5px) }
+      100% { transform: translateX(0) }
     }
     .btn{
       display: flex;
       justify-content: space-between;
+      margin-top: 1rem;
       button:nth-child(1){
         background-color: #4A8DB7;
         width: 200px;

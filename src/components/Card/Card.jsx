@@ -12,7 +12,6 @@ const Card = () => {
         {
           CardList.length !== 0
             ? CardList.map(({ id, name, direction, skills, number, level }) => {
-              console.log(level);
               return (
                 <Link to={`users/${id}`} key={id}>
                   <div className={cls.card}>
