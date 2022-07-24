@@ -7,21 +7,23 @@ import { useForm } from "react-hook-form";
 import { resumeCreate } from "../../../../config";
 import { useAuth } from "../../../../hooks/useAuth";
 import Watch from '../../../../components/Watch/Watch'
+import useIsLogin from '../../../../hooks/useIsLogin'
 // import watch from "../../../../components/Watch/Watch"
 
 
 const AddResume = () => {
-  const { id } = useAuth()
+  
+  const { isAuth } = useIsLogin()
+
   const {
     register,
-    reset,
+    reset, 
     handleSubmit,
 
   } = useForm()
 
   function postResume(data) {
-
-    resumeCreate(data, id).then(r => console.log(r))
+    resumeCreate(data, isAuth?.uid).then(r => console.log(r))
   }
 
   return (
@@ -158,10 +160,10 @@ const AddResume = () => {
                 <div>
                   <label>Ваш стэк</label>
                 </div>
-                <select className={cls.select} {...register('resumeStack')}>
-                  <option value="Junior">JavaScript</option>
-                  <option value="Middle">Python</option>
-                  <option value="Senior">Java</option>
+                <select className={cls.select} {...register('resumeSkills')}>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Python">Python</option>
+                  <option value="Java">Java</option>
                 </select>
               </div>
             </div>

@@ -6,26 +6,21 @@ export const list = [
   },
   {
     id: 2,
-    title: 'Программисты',
-    route: '/developers',
-  },
-  {
-    id: 3,
     title: 'Избранные',
     route: '/favorites',
   },
   {
-    id: 4,
+    id: 3,
     title: 'Профиль',
     route: '/profile',
   },
   {
-    id: 5,
+    id: 4,
     title: 'Войти',
     route: '/auth/login',
   },
   {
-    id: 6,
+    id: 5,
     title: 'Регистрация',
     route: '/auth/register',
   },

@@ -5,20 +5,21 @@ import { Skeleton } from '@mui/material'
 import notFound from '../../assets/img/notFound.png'
 import { getResume, getUsers } from '../../config'
 import { useAuth } from '../../hooks/useAuth'
+import useIsLogin from '../../hooks/useIsLogin'
 
 
 
 const Card = ({ filterCard }) => {
 
-  const { id } = useAuth()
+  const { isAuth } = useIsLogin()
 
-  console.log(id);
+  console.log(isAuth?.uid);
 
   React.useEffect(() => {
-    
-    getResume(id).then(r => console.log(r))
-    
-  }, [])
+
+    getResume(isAuth?.uid).then(r => console.log(r))
+
+  }, [isAuth?.id])
 
 
   !filterCard && <Skeleton />

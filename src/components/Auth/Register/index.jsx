@@ -39,7 +39,7 @@ const Register = () => {
           id: user.uid,
           token: user.accessToken,
         }))
-        user && createNewUser({...data, resume:''}, user.uid).then((r) => r && navigate('/'))
+        user && createNewUser({...data, resume:'',}, user.uid).then((r) => r && navigate('/'))
       })
       
     } catch (error) {
